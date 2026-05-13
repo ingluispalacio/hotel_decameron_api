@@ -33,13 +33,14 @@ class HotelConfigurationUseCaseTest extends TestCase
         $configurationRepository
             ->shouldReceive('existsCombination')
             ->once()
-            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', 'rt-123', 'accom-123', null)
+            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', 'rt-123', 'accom-123')
             ->andReturn(false);
         $configurationRepository
             ->shouldReceive('sumQuantityByHotel')
+            ->with(Mockery::any())
             ->once()
-            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', null)
-            ->andReturn(8);
+            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890')
+            ->andReturn(100);
         $configurationRepository
             ->shouldReceive('save')
             ->never();
@@ -70,7 +71,7 @@ class HotelConfigurationUseCaseTest extends TestCase
         $configurationRepository
             ->shouldReceive('existsCombination')
             ->once()
-            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', 'rt-123', 'accom-123', null)
+            ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', 'rt-123', 'accom-123')
             ->andReturn(true);
         $configurationRepository
             ->shouldReceive('save')
@@ -133,9 +134,10 @@ class HotelConfigurationUseCaseTest extends TestCase
             ->andReturn(false);
         $configurationRepository
             ->shouldReceive('sumQuantityByHotel')
+            ->with(Mockery::any())
             ->once()
             ->with('f1e2d3c4-b5a6-7890-abcd-ef1234567890', 'config-1')
-            ->andReturn(8);
+            ->andReturn(100);
         $configurationRepository
             ->shouldReceive('save')
             ->never();
