@@ -43,4 +43,8 @@ jobs:
         run: php artisan migrate --force --env=testing
 
       - name: Run PHPUnit tests
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ':memory:'
         run: composer test
