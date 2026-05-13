@@ -1,0 +1,616 @@
+name: Hotels
+description: |-
+
+  APIs for managing hotels.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/hotels
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create hotel'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Hotel name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Decameron Cartagena'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      address:
+        custom: []
+        name: address
+        description: 'Hotel address. Must not be greater than 255 characters.'
+        required: true
+        example: 'Bocagrande Avenue'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city_id:
+        custom: []
+        name: city_id
+        description: 'City UUID associated with the hotel.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      nit:
+        custom: []
+        name: nit
+        description: 'Hotel tax identification number. Must not be greater than 255 characters.'
+        required: true
+        example: '900123456'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      max_rooms:
+        custom: []
+        name: max_rooms
+        description: 'Maximum number of rooms allowed. Must be at least 1.'
+        required: true
+        example: 150
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Decameron Cartagena'
+      address: 'Bocagrande Avenue'
+      city_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      nit: '900123456'
+      max_rooms: 150
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "name": "Decameron Cartagena",
+            "address": "Bocagrande Avenue",
+            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "nit": "900123456",
+            "max_rooms": 150
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/v1/hotels/{id}'
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update hotel'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Updated hotel name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Decameron Barú'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      address:
+        custom: []
+        name: address
+        description: 'Updated hotel address. Must not be greater than 255 characters.'
+        required: true
+        example: 'Barú Island, Cartagena'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city_id:
+        custom: []
+        name: city_id
+        description: 'City UUID associated with the hotel.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      nit:
+        custom: []
+        name: nit
+        description: 'Updated hotel tax identification number. Must not be greater than 255 characters.'
+        required: true
+        example: '900987654'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      max_rooms:
+        custom: []
+        name: max_rooms
+        description: 'Updated maximum number of rooms. Must be at least 1.'
+        required: true
+        example: 250
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Decameron Barú'
+      address: 'Barú Island, Cartagena'
+      city_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      nit: '900987654'
+      max_rooms: 250
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "name": "Updated Hotel",
+            "address": "New Address",
+            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "nit": "900123456",
+            "max_rooms": 200
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found."}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/hotels/{id}'
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update hotel'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Updated hotel name. Must not be greater than 255 characters.'
+        required: true
+        example: 'Decameron Barú'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      address:
+        custom: []
+        name: address
+        description: 'Updated hotel address. Must not be greater than 255 characters.'
+        required: true
+        example: 'Barú Island, Cartagena'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city_id:
+        custom: []
+        name: city_id
+        description: 'City UUID associated with the hotel.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      nit:
+        custom: []
+        name: nit
+        description: 'Updated hotel tax identification number. Must not be greater than 255 characters.'
+        required: true
+        example: '900987654'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      max_rooms:
+        custom: []
+        name: max_rooms
+        description: 'Updated maximum number of rooms. Must be at least 1.'
+        required: true
+        example: 250
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Decameron Barú'
+      address: 'Barú Island, Cartagena'
+      city_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      nit: '900987654'
+      max_rooms: 250
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "name": "Updated Hotel",
+            "address": "New Address",
+            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "nit": "900123456",
+            "max_rooms": 200
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found."}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/hotels/{id}'
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete hotel'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/hotels
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List hotels'
+      description: 'Returns a paginated list of hotels.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      search:
+        custom: []
+        name: search
+        description: 'Optional search term.'
+        required: false
+        example: Decameron
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      page:
+        custom: []
+        name: page
+        description: 'Page number.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      search: Decameron
+      per_page: 10
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "current_page": 1,
+            "data": [
+              {
+                "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+                "name": "Decameron Cartagena",
+                "address": "Bocagrande Avenue",
+                "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+                "nit": "900123456",
+                "max_rooms": 150
+              }
+            ],
+            "per_page": 10,
+            "total": 1
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/hotels/{id}'
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get hotel by ID'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "name": "Decameron Cartagena",
+            "address": "Bocagrande Avenue",
+            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "nit": "900123456",
+            "max_rooms": 150
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null

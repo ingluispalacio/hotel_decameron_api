@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [8.2]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v4
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate --ansi
+          php artisan config:clear
+
+      - name: Run database migrations for testing
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ':memory:'
+        run: php artisan migrate --force --env=testing
+
+      - name: Run PHPUnit tests
+        run: composer test

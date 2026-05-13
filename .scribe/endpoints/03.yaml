@@ -1,0 +1,422 @@
+name: 'Hotel Configurations'
+description: |-
+
+  APIs for managing hotel room configurations.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/hotel-configurations
+    metadata:
+      custom: []
+      groupName: 'Hotel Configurations'
+      groupDescription: |-
+
+        APIs for managing hotel room configurations.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create hotel configuration'
+      description: 'Creates a new hotel room configuration.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      hotel_id:
+        custom: []
+        name: hotel_id
+        description: 'Hotel UUID.'
+        required: true
+        example: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      room_type_id:
+        custom: []
+        name: room_type_id
+        description: 'Room type UUID.'
+        required: true
+        example: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      accommodation_id:
+        custom: []
+        name: accommodation_id
+        description: 'Accommodation UUID.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'Number of rooms configured. Must be at least 1.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      hotel_id: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+      room_type_id: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+      accommodation_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      quantity: 5
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "hotel_id": "f1e2d3c4-b5a6-7890-abcd-ef1234567890",
+            "room_type_id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "accommodation_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "quantity": 5,
+            "created_at": "2026-05-12T10:00:00.000000Z",
+            "updated_at": "2026-05-12T10:00:00.000000Z"
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid.", "errors": {...}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/v1/hotel-configurations/{id}'
+    metadata:
+      custom: []
+      groupName: 'Hotel Configurations'
+      groupDescription: |-
+
+        APIs for managing hotel room configurations.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update hotel configuration'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel configuration ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      hotel_id:
+        custom: []
+        name: hotel_id
+        description: 'Hotel UUID.'
+        required: true
+        example: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      room_type_id:
+        custom: []
+        name: room_type_id
+        description: 'Room type UUID.'
+        required: true
+        example: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      accommodation_id:
+        custom: []
+        name: accommodation_id
+        description: 'Accommodation UUID.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'Updated number of configured rooms. Must be at least 1.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      hotel_id: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+      room_type_id: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+      accommodation_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      quantity: 10
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "hotel_id": "f1e2d3c4-b5a6-7890-abcd-ef1234567890",
+            "room_type_id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "accommodation_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "quantity": 10
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel configuration not found"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/hotel-configurations/{id}'
+    metadata:
+      custom: []
+      groupName: 'Hotel Configurations'
+      groupDescription: |-
+
+        APIs for managing hotel room configurations.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update hotel configuration'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel configuration ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      hotel_id:
+        custom: []
+        name: hotel_id
+        description: 'Hotel UUID.'
+        required: true
+        example: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      room_type_id:
+        custom: []
+        name: room_type_id
+        description: 'Room type UUID.'
+        required: true
+        example: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      accommodation_id:
+        custom: []
+        name: accommodation_id
+        description: 'Accommodation UUID.'
+        required: true
+        example: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'Updated number of configured rooms. Must be at least 1.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      hotel_id: f1e2d3c4-b5a6-7890-abcd-ef1234567890
+      room_type_id: b1c2d3e4-f5a6-7890-abcd-ef1234567890
+      accommodation_id: c1d2e3f4-a5b6-7890-abcd-ef1234567890
+      quantity: 10
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "hotel_id": "f1e2d3c4-b5a6-7890-abcd-ef1234567890",
+            "room_type_id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "accommodation_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "quantity": 10
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel configuration not found"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"message": "The given data was invalid."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/hotel-configurations/{id}'
+    metadata:
+      custom: []
+      groupName: 'Hotel Configurations'
+      groupDescription: |-
+
+        APIs for managing hotel room configurations.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete hotel configuration'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel configuration ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel configuration not found"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
