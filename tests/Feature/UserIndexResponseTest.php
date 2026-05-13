@@ -59,7 +59,7 @@ class UserIndexResponseTest extends TestCase
         $this->withoutMiddleware();
 
         // Act
-        $response = $this->get(sprintf('/%s/users', config('api.prefix')));
+        $response = $this->get('/api/v1/users');
 
         // Assert
         $response->assertStatus(200)
