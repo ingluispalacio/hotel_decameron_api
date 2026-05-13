@@ -8,6 +8,7 @@ use App\Modules\Auth\Domain\Entities\User;
 use DateTimeImmutable;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
+use Mockery;
 
 class UserIndexResponseTest extends TestCase
 {
@@ -45,16 +46,17 @@ class UserIndexResponseTest extends TestCase
             ),
         ];
 
-        $this->app->bind(ListUsersUseCase::class, fn () => new class($expectedUsers) {
-            public function __construct(private array $users)
-            {
-            }
+        $listUsersUseCaseMock = Mockery::mock(ListUsersUseCase::class);
 
-            public function execute(): array
-            {
-                return $this->users;
-            }
-        });
+        $listUsersUseCaseMock
+            ->shouldReceive('execute')
+            ->once()
+            ->andReturn($expectedUsers);
+
+        $this->app->instance(
+            ListUsersUseCase::class,
+            $listUsersUseCaseMock
+        );
 
         $this->withoutMiddleware();
 
@@ -77,8 +79,10 @@ class UserIndexResponseTest extends TestCase
                     'updated_at',
                 ],
             ])
-            ->assertJson(fn (AssertableJson $json) =>
-                $json->each(fn (AssertableJson $json) =>
+            ->assertJson(
+                fn(AssertableJson $json) =>
+                $json->each(
+                    fn(AssertableJson $json) =>
                     $json->whereType('id', 'string')
                         ->whereType('first_name', 'string')
                         ->whereType('last_name', 'string')
