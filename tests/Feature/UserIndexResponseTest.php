@@ -15,34 +15,33 @@ class UserIndexResponseTest extends TestCase
     public function test_index_endpoint_returns_a_valid_user_json_array(): void
     {
         // Arrange
+        // Arrange
         $expectedUsers = [
             new User(
-                '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
-                'Jane',
-                'Doe',
-                new DateTimeImmutable('1990-01-01'),
-                '123e4567-e89b-12d3-a456-426614174000',
-                null,
-                'jane.doe@example.com',
-                'secret-password',
-                'Calle Falsa 123',
-                UserStatusEnum::ACTIVE,
-                new DateTimeImmutable('2025-01-01T00:00:00+00:00'),
-                new DateTimeImmutable('2025-01-02T00:00:00+00:00'),
+                id: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
+                firstName: 'Jane',
+                lastName: 'Doe',
+                birthDate: new DateTimeImmutable('1990-01-01'),
+                roleId: '123e4567-e89b-12d3-a456-426614174000',
+                email: 'jane.doe@example.com',
+                password: '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                address: 'Calle Falsa 123',
+                status: UserStatusEnum::ACTIVE,
+                createdAt: new DateTimeImmutable('2025-01-01'),
+                updatedAt: new DateTimeImmutable('2025-01-02')
             ),
             new User(
-                'c56a4180-65aa-42ec-a945-5fd21dec0538',
-                'Carlos',
-                'Pérez',
-                new DateTimeImmutable('1987-05-10'),
-                '987e6543-e21b-32d3-a456-426614174999',
-                null,
-                'carlos.perez@example.com',
-                'another-secret',
-                'Avenida Siempre Viva 742',
-                UserStatusEnum::INACTIVE,
-                new DateTimeImmutable('2025-03-01T12:30:00+00:00'),
-                new DateTimeImmutable('2025-03-05T15:45:00+00:00'),
+                id: 'c56a4180-65aa-42ec-a945-5fd21dec0538',
+                firstName: 'Carlos',
+                lastName: 'Pérez',
+                birthDate: new DateTimeImmutable('1987-05-10'),
+                roleId: '987e6543-e21b-32d3-a456-426614174999',
+                email: 'carlos.perez@example.com',
+                password: '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                address: 'Avenida Siempre Viva 742',
+                status: UserStatusEnum::INACTIVE,
+                createdAt: new DateTimeImmutable('2025-01-01'),
+                updatedAt: new DateTimeImmutable('2025-03-05')
             ),
         ];
 
