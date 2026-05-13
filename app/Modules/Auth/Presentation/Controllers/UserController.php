@@ -9,6 +9,7 @@ use App\Modules\Auth\Application\UseCases\User\DeleteUserUseCase;
 use App\Modules\Auth\Application\UseCases\User\GetUserByIdUseCase;
 use App\Modules\Auth\Application\UseCases\User\ListUsersUseCase;
 use App\Modules\Auth\Application\UseCases\User\UpdateUserUseCase;
+use App\Modules\Auth\Domain\Enums\UserStatusEnum;
 use App\Modules\Auth\Presentation\Requests\CreateUserRequest;
 use App\Modules\Auth\Presentation\Requests\UpdateUserRequest;
 use Illuminate\Http\JsonResponse;
@@ -140,7 +141,7 @@ class UserController extends Controller
             password: $request->password,
             address: $request->address,
             roleId: $request->role_id,
-            status: $request->status,
+            status: UserStatusEnum::from($request->status),
         );
 
         $this->createUserUseCase->execute($dto);
@@ -193,7 +194,7 @@ class UserController extends Controller
                 email: $request->email ?? null,
                 address: $request->address ?? null,
                 roleId: $request->role_id ?? null,
-                status: $request->status ?? null,
+                status: $request->status ? UserStatusEnum::from($request->status) : null,
             );
             $this->updateUserUseCase->execute($dto);
 
@@ -205,7 +206,7 @@ class UserController extends Controller
                     'last_name'  => $dto->lastName,
                     'email'      => $dto->email,
                     'address'    => $dto->address,
-                    'role_id'    => $dto->roleId,
+                    'role_title'    => $dto->roleId,
                     'status'     => $dto->status,
                 ]),
             ]);

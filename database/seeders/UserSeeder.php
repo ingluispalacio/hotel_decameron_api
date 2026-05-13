@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => Hash::make('password123'),
             'address' => 'Admin Address',
-            'status' => 'active',
+            'status' => 'ACTIVE',
         ]);
     }
 }
