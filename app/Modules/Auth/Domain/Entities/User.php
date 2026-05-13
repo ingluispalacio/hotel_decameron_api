@@ -11,11 +11,11 @@ class User
     private string $lastName;
     private \DateTimeImmutable $birthDate;
     private string $roleId;
-    private ?string $roleName;
     private string $email;
     private string $password;
     private string $address;
     private UserStatusEnum $status;
+    private ?string $roleName;
     private ?\DateTimeImmutable $createdAt;
     private ?\DateTimeImmutable $updatedAt;
     private ?\DateTimeImmutable $deletedAt = null;
@@ -25,11 +25,11 @@ class User
         string $lastName,
         \DateTimeImmutable $birthDate,
         string $roleId,
-        ?string $roleName = null, 
         string $email,
         string $password,
         string $address,
         UserStatusEnum $status,
+        ?string $roleName = null, 
         ?\DateTimeImmutable $createdAt = null,
         ?\DateTimeImmutable $updatedAt = null
     ) {
@@ -38,13 +38,13 @@ class User
         $this->lastName = $lastName;
         $this->birthDate = $birthDate;
         $this->roleId = $roleId;
-        $this->roleName = $roleName;
         $this->email = $email;
         $this->password = $password;
         $this->address = $address;
         $this->status = $status;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->roleName = $roleName;
     }
 
     // Getters

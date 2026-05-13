@@ -63,7 +63,9 @@ class CityController extends Controller
             'count' => count($cities)
         ]);
 
-        return response()->json($cities);
+        return response()->json(
+            array_map(fn ($city) => $city->toArray(), $cities)
+        );
     }
 
     /**
