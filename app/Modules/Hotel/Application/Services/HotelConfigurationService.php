@@ -126,6 +126,21 @@ class HotelConfigurationService
         return $configuration;
     }
 
+    public function delete(string $id): void
+    {
+        $serviceId = uniqid('svc_', true);
+        Log::info('Eliminando configuración', ['service_id' => $serviceId, 'configuration_id' => $id]);
+
+        $configuration = $this->configurationRepository->findById($id);
+        if (!$configuration) {
+            throw new DomainException("Hotel configuration with ID {$id} not found.");
+        }
+
+        $this->configurationRepository->delete($configuration);
+
+        Log::info('Configuración eliminada', ['service_id' => $serviceId, 'configuration_id' => $id]);
+    }
+
     /**
      * Validaciones centralizadas que reemplazan los validadores externos.
      */

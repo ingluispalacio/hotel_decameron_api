@@ -50,21 +50,21 @@ class HotelConfigurationController extends Controller
     public function store(StoreHotelConfigurationRequest $request): JsonResponse
     {
         $requestId = uniqid('req_', true);
+        $validated = $request->validated();
 
         Log::info('Creando configuración de hotel', [
             'request_id' => $requestId,
-            // 'user_id'    => auth()->id(),
-            'data'       => $request->validated()
+            'data'       => $validated
         ]);
 
-        $dto = new CreateHotelConfigurationDTO(...$request->validated());
+        $dto = new CreateHotelConfigurationDTO(
+            hotelId: $validated['hotel_id'],
+            roomTypeId: $validated['room_type_id'],
+            accommodationId: $validated['accommodation_id'],
+            quantity: $validated['quantity']
+        );
+
         $configuration = $this->createHotelConfigurationUseCase->execute($dto);
-
-        Log::info('Configuración creada', [
-            'request_id'       => $requestId,
-            'configuration_id' => $configuration->getId(),
-            'hotel_id'         => $configuration->getHotelId()
-        ]);
 
         return response()->json([
             'id'               => $configuration->getId(),
