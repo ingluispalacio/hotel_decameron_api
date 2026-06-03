@@ -15,6 +15,8 @@ interface HotelConfigurationRepositoryInterface
     // Eliminar una configuración (física o lógica, según decidas)
     public function delete(HotelConfiguration $configuration): void;
 
+    public function findAll(): array;
+
     // Verificar si ya existe una combinación específica (para unicidad)
     public function existsCombination(
         string $hotelId,

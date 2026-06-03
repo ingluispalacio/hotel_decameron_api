@@ -52,6 +52,7 @@ Route::prefix(config('api.prefix'))->group(function () {
         Route::post('cities', [CityController::class, 'store']);
         
         Route::prefix('hotel-configurations')->group(function () {
+            Route::get('/', [HotelConfigurationController::class, 'listAll']);
             Route::post('/', [HotelConfigurationController::class, 'store']);
             Route::put('{id}', [HotelConfigurationController::class, 'update']);
             Route::patch('{id}', [HotelConfigurationController::class, 'update']);

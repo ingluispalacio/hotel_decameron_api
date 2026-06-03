@@ -8,7 +8,7 @@ use App\Modules\Hotel\Domain\Entities\HotelConfiguration as DomainHotelConfigura
 use App\Modules\Hotel\Domain\Repositories\HotelConfigurationRepositoryInterface;
 use App\Modules\Hotel\Infrastructure\Models\HotelConfiguration as EloquentHotelConfiguration;
 use App\Modules\Hotel\Infrastructure\Mappers\EloquentHotelConfigurationMapper;
-
+use App\Modules\Hotel\Infrastructure\Models\Hotel;
 
 class HotelConfigurationRepository implements HotelConfigurationRepositoryInterface
 {
@@ -64,5 +64,25 @@ class HotelConfigurationRepository implements HotelConfigurationRepositoryInterf
         }
 
         return (int) $query->sum('quantity');
+    }
+
+    public function findAll(): array
+    {
+        $hotels = Hotel::with(['configurations.roomType', 'configurations.accommodation'])->get();
+
+        return $hotels->map(function ($hotel) {
+            return [
+                'id' => $hotel->id,
+                'hotel_name' => $hotel->name,
+                'max_rooms' => $hotel->max_rooms,
+                'configurations' => $hotel->configurations->map(function ($config) {
+                    return [
+                        'room_type' => $config->roomType->name,
+                        'accommodation' => $config->accommodation->name,
+                        'quantity' => $config->quantity,
+                    ];
+                })->toArray(),
+            ];
+        })->toArray();
     }
 }

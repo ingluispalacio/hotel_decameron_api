@@ -15,6 +15,7 @@ use App\Modules\Hotel\Application\DTOs\HotelConfiguration\UpdateHotelConfigurati
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\CreateHotelConfigurationUseCase;
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\UpdateHotelConfigurationUseCase;
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\DeleteHotelConfigurationUseCase;
+use App\Modules\Hotel\Application\UseCases\HotelConfiguration\ListAllHotelConfigurationsUseCase;
 
 /**
  * @authenticated
@@ -27,8 +28,43 @@ class HotelConfigurationController extends Controller
     public function __construct(
         private readonly CreateHotelConfigurationUseCase $createHotelConfigurationUseCase,
         private readonly UpdateHotelConfigurationUseCase $updateHotelConfigurationUseCase,
-        private readonly DeleteHotelConfigurationUseCase $deleteHotelConfigurationUseCase
+        private readonly DeleteHotelConfigurationUseCase $deleteHotelConfigurationUseCase,
+        private readonly ListAllHotelConfigurationsUseCase $listAllHotelConfigurationsUseCase
     ) {}
+
+
+    /**
+     * List all hotels with their configurations
+     *
+     * Returns a list of all hotels, each containing its configurations with names (not IDs).
+     *
+     * @response 200 [
+     *   {
+     *     "hotel_name": "Decameron Cartagena",
+     *     "configurations": [
+     *       {
+     *         "room_type": "Standard",
+     *         "accommodation": "Doble",
+     *         "quantity": 10
+     *       },
+     *       {
+     *         "room_type": "Junior",
+     *         "accommodation": "Triple",
+     *         "quantity": 5
+     *       }
+     *     ]
+     *   },
+     *   {
+     *     "hotel_name": "Decameron Santa Marta",
+     *     "configurations": [...]
+     *   }
+     * ]
+     * @response 401 {"message": "Unauthenticated"}
+     */
+    public function listAll(): JsonResponse
+    {
+        return response()->json($this->listAllHotelConfigurationsUseCase->execute());
+    }
 
     /**
      * Create hotel configuration

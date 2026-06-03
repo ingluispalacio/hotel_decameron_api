@@ -6,6 +6,76 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: api/v1/hotel-configurations
+    metadata:
+      custom: []
+      groupName: 'Hotel Configurations'
+      groupDescription: |-
+
+        APIs for managing hotel room configurations.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List all hotels with their configurations'
+      description: 'Returns a list of all hotels, each containing its configurations with names (not IDs).'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          [
+            {
+              "hotel_name": "Decameron Cartagena",
+              "configurations": [
+                {
+                  "room_type": "Standard",
+                  "accommodation": "Doble",
+                  "quantity": 10
+                },
+                {
+                  "room_type": "Junior",
+                  "accommodation": "Triple",
+                  "quantity": 5
+                }
+              ]
+            },
+            {
+              "hotel_name": "Decameron Santa Marta",
+              "configurations": [...]
+            }
+          ]
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"message": "Unauthenticated"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - POST
     uri: api/v1/hotel-configurations
     metadata:
