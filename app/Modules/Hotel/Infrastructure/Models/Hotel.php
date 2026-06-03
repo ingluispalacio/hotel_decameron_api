@@ -2,8 +2,7 @@
 
 namespace App\Modules\Hotel\Infrastructure\Models;
 
-use App\Modules\Hotel\Domain\Entities\City;
-use App\Modules\Hotel\Domain\Entities\HotelConfiguration;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

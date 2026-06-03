@@ -2,7 +2,6 @@
 
 namespace App\Modules\Hotel\Infrastructure\Models;
 
-use App\Modules\Hotel\Domain\Models\RoomType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
