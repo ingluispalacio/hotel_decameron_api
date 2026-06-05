@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * @mixin Model
+ * @mixin \Illuminate\Database\Eloquent\Model
+ * @method static void creating(\Closure $callback)
  */
 trait HasUuid
 {

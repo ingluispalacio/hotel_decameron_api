@@ -233,7 +233,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 2, 2026</li>
+        <li>Last updated: June 5, 2026</li>
     </ul>
 </div>
 
@@ -2845,7 +2845,7 @@ fetch(url, {
     &quot;id&quot;: &quot;b1c2d3e4-f5a6-7890-abcd-ef1234567890&quot;,
     &quot;name&quot;: &quot;Decameron Cartagena&quot;,
     &quot;address&quot;: &quot;Bocagrande Avenue&quot;,
-    &quot;city_id&quot;: &quot;c1d2e3f4-a5b6-7890-abcd-ef1234567890&quot;,
+    &quot;city_name&quot;: &quot;Cartagena&quot;,
     &quot;nit&quot;: &quot;900123456&quot;,
     &quot;max_rooms&quot;: 150
 }</code>
@@ -3071,7 +3071,7 @@ fetch(url, {
     &quot;id&quot;: &quot;b1c2d3e4-f5a6-7890-abcd-ef1234567890&quot;,
     &quot;name&quot;: &quot;Updated Hotel&quot;,
     &quot;address&quot;: &quot;New Address&quot;,
-    &quot;city_id&quot;: &quot;c1d2e3f4-a5b6-7890-abcd-ef1234567890&quot;,
+    &quot;city_name&quot;: &quot;Cartagena&quot;,
     &quot;nit&quot;: &quot;900123456&quot;,
     &quot;max_rooms&quot;: 200
 }</code>
@@ -3319,7 +3319,7 @@ fetch(url, {
     &quot;id&quot;: &quot;b1c2d3e4-f5a6-7890-abcd-ef1234567890&quot;,
     &quot;name&quot;: &quot;Updated Hotel&quot;,
     &quot;address&quot;: &quot;New Address&quot;,
-    &quot;city_id&quot;: &quot;c1d2e3f4-a5b6-7890-abcd-ef1234567890&quot;,
+    &quot;city_name&quot;: &quot;Cartagena&quot;,
     &quot;nit&quot;: &quot;900123456&quot;,
     &quot;max_rooms&quot;: 200
 }</code>
@@ -3716,7 +3716,7 @@ fetch(url, {
             &quot;id&quot;: &quot;b1c2d3e4-f5a6-7890-abcd-ef1234567890&quot;,
             &quot;name&quot;: &quot;Decameron Cartagena&quot;,
             &quot;address&quot;: &quot;Bocagrande Avenue&quot;,
-            &quot;city_id&quot;: &quot;c1d2e3f4-a5b6-7890-abcd-ef1234567890&quot;,
+            &quot;city_name&quot;: &quot;Cartagena&quot;,
             &quot;nit&quot;: &quot;900123456&quot;,
             &quot;max_rooms&quot;: 150
         }
@@ -3897,7 +3897,7 @@ fetch(url, {
     &quot;id&quot;: &quot;b1c2d3e4-f5a6-7890-abcd-ef1234567890&quot;,
     &quot;name&quot;: &quot;Decameron Cartagena&quot;,
     &quot;address&quot;: &quot;Bocagrande Avenue&quot;,
-    &quot;city_id&quot;: &quot;c1d2e3f4-a5b6-7890-abcd-ef1234567890&quot;,
+    &quot;city_name&quot;: &quot;Cartagena&quot;,
     &quot;nit&quot;: &quot;900123456&quot;,
     &quot;max_rooms&quot;: 150
 }</code>

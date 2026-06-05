@@ -52,7 +52,7 @@ class HotelController extends Controller
      *       "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
      *       "name": "Decameron Cartagena",
      *       "address": "Bocagrande Avenue",
-     *       "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+     *       "city_name": "Cartagena",
      *       "nit": "900123456",
      *       "max_rooms": 150
      *     }
@@ -71,15 +71,7 @@ class HotelController extends Controller
 
         $paginatedResult = $this->listHotelsUseCase->execute($filters);
 
-        // Serializar el objeto PaginatedResult
-        $data = array_map(fn($hotel) => [
-            'id'         => $hotel->getId(),
-            'name'       => $hotel->getName(),
-            'address'    => $hotel->getAddress(),
-            'city_id'    => $hotel->getCityId(),
-            'nit'        => $hotel->getNit(),
-            'max_rooms'  => $hotel->getMaxRooms(),
-        ], $paginatedResult->items());
+        $data = array_map(fn($hotel) => $hotel->toArray(), $paginatedResult->items());
 
         return response()->json([
             'current_page' => $paginatedResult->currentPage(),
@@ -97,7 +89,7 @@ class HotelController extends Controller
      *   "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
      *   "name": "Decameron Cartagena",
      *   "address": "Bocagrande Avenue",
-     *   "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+     *   "city_name": "Cartagena",
      *   "nit": "900123456",
      *   "max_rooms": 150
      * }
@@ -107,14 +99,7 @@ class HotelController extends Controller
     {
         $hotel = $this->getHotelByIdUseCase->execute($id);
 
-        return response()->json([
-            'id'         => $hotel->getId(),
-            'name'       => $hotel->getName(),
-            'address'    => $hotel->getAddress(),
-            'city_id'    => $hotel->getCityId(),
-            'nit'        => $hotel->getNit(),
-            'max_rooms'  => $hotel->getMaxRooms(),
-        ]);
+        return response()->json($hotel->toArray());
     }
 
     /**
@@ -124,7 +109,7 @@ class HotelController extends Controller
      *   "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
      *   "name": "Decameron Cartagena",
      *   "address": "Bocagrande Avenue",
-     *   "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+     *   "city_name": "Cartagena",
      *   "nit": "900123456",
      *   "max_rooms": 150
      * }
@@ -152,18 +137,11 @@ class HotelController extends Controller
 
         Log::info('Hotel creado', [
             'request_id' => $requestId,
-            'hotel_id'   => $hotel->getId(),
-            'hotel_name' => $hotel->getName()
+            'hotel_id'   => $hotel->id,
+            'hotel_name' => $hotel->name
         ]);
 
-        return response()->json([
-            'id'         => $hotel->getId(),
-            'name'       => $hotel->getName(),
-            'address'    => $hotel->getAddress(),
-            'city_id'    => $hotel->getCityId(),
-            'nit'        => $hotel->getNit(),
-            'max_rooms'  => $hotel->getMaxRooms(),
-        ], 201);
+        return response()->json($hotel->toArray(), 201);
     }
 
     /**
@@ -174,7 +152,7 @@ class HotelController extends Controller
      *   "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
      *   "name": "Updated Hotel",
      *   "address": "New Address",
-     *   "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+     *   "city_name": "Cartagena",
      *   "nit": "900123456",
      *   "max_rooms": 200
      * }
@@ -195,14 +173,7 @@ class HotelController extends Controller
 
         $hotel = $this->updateHotelUseCase->execute($dto);
 
-        return response()->json([
-            'id'         => $hotel->getId(),
-            'name'       => $hotel->getName(),
-            'address'    => $hotel->getAddress(),
-            'city_id'    => $hotel->getCityId(),
-            'nit'        => $hotel->getNit(),
-            'max_rooms'  => $hotel->getMaxRooms(),
-        ]);
+        return response()->json($hotel->toArray());
     }
 
     /**
