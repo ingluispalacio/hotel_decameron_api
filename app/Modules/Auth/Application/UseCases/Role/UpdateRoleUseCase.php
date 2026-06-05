@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Modules\Auth\Application\UseCases\Role;
 
 use App\Modules\Auth\Application\DTOs\Role\UpdateRoleDTO;
-use App\Modules\Auth\Domain\Enums\UserRoleEnum;
+use App\Shared\Enums\UserRoleEnum;
 use App\Modules\Auth\Domain\Repositories\RoleRepositoryInterface;
 use DomainException;
 

@@ -40,41 +40,45 @@ Route::prefix(config('api.prefix'))->group(function () {
         Route::post('auth/logout', [AuthController::class, 'logout']);
         Route::post('auth/me', [AuthController::class, 'me']);
 
-        // Gestión de Hoteles
-        Route::prefix('hotels')->group(function () {
-            Route::post('/', [HotelController::class, 'store']);
-            Route::put('{id}', [HotelController::class, 'update']);
-            Route::patch('{id}', [HotelController::class, 'update']);
-            Route::delete('{id}', [HotelController::class, 'destroy']);
+        // Read-only endpoints for admin and client
+        Route::middleware('role:ADMIN,CLIENT')->group(function () {
+            Route::get('hotels', [HotelController::class, 'index']);
+            Route::get('hotels/{id}', [HotelController::class, 'show']);
+            Route::get('hotel-configurations', [HotelConfigurationController::class, 'listAll']);
         });
 
-        // Configuración y Ciudades
-        Route::post('cities', [CityController::class, 'store']);
-        
-        Route::prefix('hotel-configurations')->group(function () {
-            Route::get('/', [HotelConfigurationController::class, 'listAll']);
-            Route::post('/', [HotelConfigurationController::class, 'store']);
-            Route::put('{id}', [HotelConfigurationController::class, 'update']);
-            Route::patch('{id}', [HotelConfigurationController::class, 'update']);
-            Route::delete('{id}', [HotelConfigurationController::class, 'destroy']);
-        });
+        // Admin-only endpoints
+        Route::middleware('role:ADMIN')->group(function () {
+            // Gestión de Hoteles
+            Route::prefix('hotels')->group(function () {
+                Route::post('/', [HotelController::class, 'store']);
+                Route::put('{id}', [HotelController::class, 'update']);
+                Route::patch('{id}', [HotelController::class, 'update']);
+                Route::delete('{id}', [HotelController::class, 'destroy']);
+            });
 
-         // Hoteles - Consulta
-    Route::get('hotels', [HotelController::class, 'index']);
-    Route::get('hotels/{id}', [HotelController::class, 'show']);
-    Route::get('cities', [CityController::class, 'index']);
-    Route::get('room-types', [RoomTypeController::class, 'index']);
-    Route::get('room-types/{id}', [RoomTypeController::class, 'show']);
-    Route::get('accommodations', [AccommodationController::class, 'index']);
-    Route::get('accommodations/{id}', [AccommodationController::class, 'show']);
-    Route::get('accommodations/name/{name}', [AccommodationController::class, 'findByName']);
+            // Configuración y Ciudades
+            Route::post('cities', [CityController::class, 'store']);
 
+            Route::prefix('hotel-configurations')->group(function () {
+                Route::post('/', [HotelConfigurationController::class, 'store']);
+                Route::put('{id}', [HotelConfigurationController::class, 'update']);
+                Route::patch('{id}', [HotelConfigurationController::class, 'update']);
+                Route::delete('{id}', [HotelConfigurationController::class, 'destroy']);
+            });
 
-        /*
-        |--------------------------------------------------------------------------
-        | Gestión de Usuarios y Roles
-        |--------------------------------------------------------------------------
-        */
+            Route::get('cities', [CityController::class, 'index']);
+            Route::get('room-types', [RoomTypeController::class, 'index']);
+            Route::get('room-types/{id}', [RoomTypeController::class, 'show']);
+            Route::get('accommodations', [AccommodationController::class, 'index']);
+            Route::get('accommodations/{id}', [AccommodationController::class, 'show']);
+            Route::get('accommodations/name/{name}', [AccommodationController::class, 'findByName']);
+
+            /*
+            |--------------------------------------------------------------------------
+            | Gestión de Usuarios y Roles
+            |--------------------------------------------------------------------------
+            */
         
         // Usuarios
         Route::prefix('users')->group(function () {
@@ -95,5 +99,6 @@ Route::prefix(config('api.prefix'))->group(function () {
             Route::patch('{id}', [RoleController::class, 'update']);
             Route::delete('{id}', [RoleController::class, 'destroy']);
         });
+    });
     });
 });
