@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use \App\Shared\Middlewares\Authorize;
+use \App\Shared\Middlewares\CheckUserStatus;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
@@ -16,8 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'role' => \App\Shared\Middlewares\Authorize::class,
-            'check.status' => \App\Shared\Middlewares\CheckUserStatus::class,
+            'role' => Authorize::class,
+            'check.status' => CheckUserStatus::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

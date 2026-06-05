@@ -32,18 +32,4 @@ class RegisterRequest extends FormRequest
         ];
     }
 
-    /**
-     * Prepare the data for validation.
-     */
-    protected function prepareForValidation(): void
-    {
-        // Set role_id to 'client' internally
-        $clientRole = \App\Modules\Auth\Infrastructure\Models\Role::where('title', 'client')->first();
-        if ($clientRole) {
-            $this->merge([
-                'role_id' => $clientRole->id,
-                'status' => 'active',
-            ]);
-        }
-    }
 }

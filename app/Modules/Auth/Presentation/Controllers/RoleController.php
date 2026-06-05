@@ -9,7 +9,7 @@ use App\Modules\Auth\Application\UseCases\Role\DeleteRoleUseCase;
 use App\Modules\Auth\Application\UseCases\Role\GetRoleByIdUseCase;
 use App\Modules\Auth\Application\UseCases\Role\ListRolesUseCase;
 use App\Modules\Auth\Application\UseCases\Role\UpdateRoleUseCase;
-use App\Modules\Auth\Domain\Enums\UserRoleEnum;
+use App\Shared\Enums\UserRoleEnum;
 use App\Modules\Auth\Presentation\Requests\CreateRoleRequest;
 use App\Modules\Auth\Presentation\Requests\UpdateRoleRequest;
 use Illuminate\Http\JsonResponse;

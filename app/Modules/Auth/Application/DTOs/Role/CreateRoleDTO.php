@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Modules\Auth\Application\DTOs\Role;
 
-use App\Modules\Auth\Domain\Enums\UserRoleEnum;
+use App\Shared\Enums\UserRoleEnum;
 
 readonly class CreateRoleDTO
 {

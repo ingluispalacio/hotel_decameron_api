@@ -8,6 +8,169 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: api/v1/hotels
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List hotels'
+      description: 'Returns a paginated list of hotels.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      search:
+        custom: []
+        name: search
+        description: 'Optional search term.'
+        required: false
+        example: Decameron
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      page:
+        custom: []
+        name: page
+        description: 'Page number.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      search: Decameron
+      per_page: 10
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "current_page": 1,
+            "data": [
+              {
+                "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+                "name": "Decameron Cartagena",
+                "address": "Bocagrande Avenue",
+                "city_name": "Cartagena",
+                "nit": "900123456",
+                "max_rooms": 150
+              }
+            ],
+            "per_page": 10,
+            "total": 1
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/hotels/{id}'
+    metadata:
+      custom: []
+      groupName: Hotels
+      groupDescription: |-
+
+        APIs for managing hotels.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get hotel by ID'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'uuid required Hotel ID.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
+            "name": "Decameron Cartagena",
+            "address": "Bocagrande Avenue",
+            "city_name": "Cartagena",
+            "nit": "900123456",
+            "max_rooms": 150
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"message": "Hotel not found."}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - POST
     uri: api/v1/hotels
     metadata:
@@ -437,169 +600,6 @@ endpoints:
         custom: []
         status: 204
         content: '{}'
-        headers: []
-        description: ''
-      -
-        custom: []
-        status: 404
-        content: '{"message": "Hotel not found."}'
-        headers: []
-        description: ''
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: api/v1/hotels
-    metadata:
-      custom: []
-      groupName: Hotels
-      groupDescription: |-
-
-        APIs for managing hotels.
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'List hotels'
-      description: 'Returns a paginated list of hotels.'
-      authenticated: true
-      deprecated: false
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters:
-      search:
-        custom: []
-        name: search
-        description: 'Optional search term.'
-        required: false
-        example: Decameron
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-      per_page:
-        custom: []
-        name: per_page
-        description: 'Number of results per page.'
-        required: false
-        example: 10
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-      page:
-        custom: []
-        name: page
-        description: 'Page number.'
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-    cleanQueryParameters:
-      search: Decameron
-      per_page: 10
-      page: 1
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-            "current_page": 1,
-            "data": [
-              {
-                "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
-                "name": "Decameron Cartagena",
-                "address": "Bocagrande Avenue",
-                "city_name": "Cartagena",
-                "nit": "900123456",
-                "max_rooms": 150
-              }
-            ],
-            "per_page": 10,
-            "total": 1
-          }
-        headers: []
-        description: ''
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/v1/hotels/{id}'
-    metadata:
-      custom: []
-      groupName: Hotels
-      groupDescription: |-
-
-        APIs for managing hotels.
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get hotel by ID'
-      description: ''
-      authenticated: true
-      deprecated: false
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'uuid required Hotel ID.'
-        required: false
-        example: architecto
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: architecto
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-            "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
-            "name": "Decameron Cartagena",
-            "address": "Bocagrande Avenue",
-            "city_name": "Cartagena",
-            "nit": "900123456",
-            "max_rooms": 150
-          }
         headers: []
         description: ''
       -

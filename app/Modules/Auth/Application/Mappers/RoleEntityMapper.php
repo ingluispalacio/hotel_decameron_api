@@ -7,7 +7,7 @@ namespace App\Modules\Auth\Application\Mappers;
 use App\Modules\Auth\Domain\Entities\Role;
 use App\Modules\Auth\Application\DTOs\Role\CreateRoleDTO;
 use App\Modules\Auth\Application\DTOs\Role\UpdateRoleDTO;
-use App\Modules\Auth\Domain\Enums\UserRoleEnum;
+use App\Shared\Enums\UserRoleEnum;
 use Ramsey\Uuid\Uuid;
 
 class RoleEntityMapper
