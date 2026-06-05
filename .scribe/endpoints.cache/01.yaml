@@ -102,7 +102,7 @@ endpoints:
             "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
             "name": "Decameron Cartagena",
             "address": "Bocagrande Avenue",
-            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "city_name": "Cartagena",
             "nit": "900123456",
             "max_rooms": 150
           }
@@ -231,7 +231,7 @@ endpoints:
             "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
             "name": "Updated Hotel",
             "address": "New Address",
-            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "city_name": "Cartagena",
             "nit": "900123456",
             "max_rooms": 200
           }
@@ -366,7 +366,7 @@ endpoints:
             "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
             "name": "Updated Hotel",
             "address": "New Address",
-            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "city_name": "Cartagena",
             "nit": "900123456",
             "max_rooms": 200
           }
@@ -529,7 +529,7 @@ endpoints:
                 "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
                 "name": "Decameron Cartagena",
                 "address": "Bocagrande Avenue",
-                "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+                "city_name": "Cartagena",
                 "nit": "900123456",
                 "max_rooms": 150
               }
@@ -596,7 +596,7 @@ endpoints:
             "id": "b1c2d3e4-f5a6-7890-abcd-ef1234567890",
             "name": "Decameron Cartagena",
             "address": "Bocagrande Avenue",
-            "city_id": "c1d2e3f4-a5b6-7890-abcd-ef1234567890",
+            "city_name": "Cartagena",
             "nit": "900123456",
             "max_rooms": 150
           }
