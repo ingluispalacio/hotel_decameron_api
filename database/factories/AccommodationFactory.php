@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Model;
-use App\Modules\Hotel\Domain\Models\Accommodation;
+use App\Modules\Hotel\Infrastructure\Models\Accommodation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory<Model>

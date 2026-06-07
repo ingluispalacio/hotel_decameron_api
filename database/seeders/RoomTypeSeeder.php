@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Modules\Hotel\Domain\Models\RoomType;
+use App\Modules\Hotel\Infrastructure\Models\RoomType;
 use App\Modules\Hotel\Domain\Enums\RoomTypeEnum;
 
 class RoomTypeSeeder extends Seeder
