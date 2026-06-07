@@ -17,4 +17,7 @@ until php artisan migrate --force; do
   sleep 5
 done
 
+echo "Running seeders..."
+php artisan db:seed --force
+
 exec php artisan serve --host=0.0.0.0 --port="${PORT}"
