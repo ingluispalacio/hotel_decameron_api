@@ -1,6 +1,20 @@
 # Decameron API
 
-API REST desarrollada con Laravel 12 y PHP 8.2 para gestionar usuarios, roles, hoteles, ciudades, tipos de habitación y alojamientos.
+API REST desarrollada con Laravel 12 y PHP 8.2 para gestionar y operar un sistema de reservas y administración hotelera.
+
+## ¿Qué hace esta API?
+
+Decameron API expone recursos para crear, consultar y administrar:
+
+- usuarios y roles con autorización basada en JWT,
+- hoteles y sus detalles,
+- ciudades y configuraciones de hotel,
+- tipos de habitaciones y alojamientos.
+
+La API está diseñada para soportar dos perfiles de usuario principales:
+
+- `ADMIN`: puede gestionar usuarios, roles, hoteles, ciudades, configuraciones, tipos de habitación y alojamientos.
+- `CLIENT`: puede consultar hoteles y configuraciones disponibles.
 
 ## Descripción
 
@@ -8,6 +22,7 @@ Esta API implementa un backend modular con una arquitectura basada en `app/Modul
 
 - Autenticación JWT para rutas protegidas.
 - Controladores y casos de uso separados por dominio (`Auth`, `Hotel`).
+- Roles y permisos con middleware `auth:api` y `role:ADMIN,CLIENT`.
 - Respuestas JSON consistentes y fáciles de consumir.
 - Pruebas automatizadas con PHPUnit.
 - Integración de CI con GitHub Actions.
