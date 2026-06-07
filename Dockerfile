@@ -1,30 +1,24 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-cli-alpine
 
-# Instalar dependencias del sistema y extensiones de PHP
 RUN apk add --no-cache \
-    postgresql-dev \
-    nginx \
-    supervisor \
-    && docker-php-ext-install pdo_pgsql
+    git \
+    unzip \
+    libpq-dev
 
-# Copiar el código de la aplicación
-COPY . /var/www/html
+RUN docker-php-ext-install pdo_pgsql
 
-# Instalar Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Instalar dependencias de PHP
-WORKDIR /var/www/html
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+WORKDIR /app
 
-# Configurar permisos
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+COPY . .
 
-# Copiar configuración de Nginx y Supervisor
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN composer install \
+    --no-dev \
+    --optimize-autoloader
 
-EXPOSE 80
+RUN chmod +x /app/docker/start.sh
 
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+EXPOSE 8080
+
+ENTRYPOINT ["/app/docker/start.sh"]
