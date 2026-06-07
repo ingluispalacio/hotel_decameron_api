@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Model;
-use App\Modules\Hotel\Domain\Models\Hotel;
-use App\Modules\Hotel\Domain\Models\City;
+use App\Modules\Hotel\Infrastructure\Models\Hotel;
+use App\Modules\Hotel\Infrastructure\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

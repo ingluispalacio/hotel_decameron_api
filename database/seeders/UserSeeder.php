@@ -7,6 +7,7 @@ use App\Modules\Auth\Infrastructure\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -16,17 +17,23 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $adminRole = Role::where('title', 'ADMIN')->first();
+        if (! $adminRole) {
+            $this->command?->info('ADMIN role not found, skipping admin user seeder.');
+            return;
+        }
 
-        User::create([
-            'id' => (string) \Illuminate\Support\Str::uuid(),
-            'first_name' => 'Admin',
-            'last_name' => 'User',
-            'birth_date' => '1990-01-01',
-            'role_id' => $adminRole->id,
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password123'),
-            'address' => 'Admin Address',
-            'status' => 'ACTIVE',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'id' => (string) Str::uuid(),
+                'first_name' => 'Admin',
+                'last_name' => 'User',
+                'birth_date' => '1990-01-01',
+                'role_id' => $adminRole->id,
+                'password' => Hash::make('password123'),
+                'address' => 'Admin Address',
+                'status' => 'ACTIVE',
+            ]
+        );
     }
 }

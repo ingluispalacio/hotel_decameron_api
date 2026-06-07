@@ -4,10 +4,10 @@ namespace Database\Factories;
 
 use App\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Modules\Hotel\Domain\Models\Hotel;
-use App\Modules\Hotel\Domain\Models\RoomType;
-use App\Modules\Hotel\Domain\Models\Accommodation;
-use App\Modules\Hotel\Domain\Models\HotelConfiguration;
+use App\Modules\Hotel\Infrastructure\Models\Hotel;
+use App\Modules\Hotel\Infrastructure\Models\RoomType;
+use App\Modules\Hotel\Infrastructure\Models\Accommodation;
+use App\Modules\Hotel\Infrastructure\Models\HotelConfiguration;
 
 /**
  * @extends Factory<Model>

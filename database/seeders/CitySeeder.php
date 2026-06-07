@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Modules\Hotel\Domain\Models\City;
+use App\Modules\Hotel\Infrastructure\Models\City;
 
 class CitySeeder extends Seeder
 {
