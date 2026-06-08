@@ -54,6 +54,15 @@ class HotelConfigurationRepository implements HotelConfigurationRepositoryInterf
         }
     }
 
+    public function findConfigurationById(string $id): ?DomainHotelConfiguration
+    {
+        $eloquent = EloquentHotelConfiguration::withTrashed()->find($id);
+        if (!$eloquent) {
+            return null;
+        }
+        return EloquentHotelConfigurationMapper::toDomain($eloquent);
+    }
+
     public function existsCombination(
         string $hotelId,
         string $roomTypeId,
