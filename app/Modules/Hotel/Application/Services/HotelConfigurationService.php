@@ -72,7 +72,7 @@ class HotelConfigurationService
         ]);
 
         // Obtener la configuración existente
-        $configuration = $this->configurationRepository->findById($dto->id);
+        $configuration = $this->configurationRepository->findConfigurationById($dto->id);
         if (!$configuration) {
             Log::error('Configuración no encontrada', [
                 'service_id' => $serviceId,
@@ -131,7 +131,7 @@ class HotelConfigurationService
         $serviceId = uniqid('svc_', true);
         Log::info('Eliminando configuración', ['service_id' => $serviceId, 'configuration_id' => $id]);
 
-        $configuration = $this->configurationRepository->findById($id);
+        $configuration = $this->configurationRepository->findConfigurationById($id);
         if (!$configuration) {
             throw new DomainException("Hotel configuration with ID {$id} not found.");
         }

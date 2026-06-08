@@ -9,6 +9,7 @@ interface HotelConfigurationRepositoryInterface
     // Persistir una configuración (crea o actualiza según si tiene ID)
     public function save(HotelConfiguration $configuration): void;
 
+    public function findConfigurationById(string $id): ?HotelConfiguration;
     // Buscar por ID
     public function findById(string $id): ?array;
 
