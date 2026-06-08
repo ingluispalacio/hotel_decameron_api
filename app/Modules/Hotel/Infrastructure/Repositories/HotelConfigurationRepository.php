@@ -37,6 +37,7 @@ class HotelConfigurationRepository implements HotelConfigurationRepositoryInterf
             'max_rooms' => $hotel->max_rooms,
             'configurations' => $hotel->configurations->map(function ($config) {
                 return [
+                    'id' => $config->id,
                     'room_type' => $config->roomType->name,
                     'accommodation' => $config->accommodation->name,
                     'quantity' => $config->quantity,
