@@ -16,6 +16,7 @@ use App\Modules\Hotel\Application\UseCases\HotelConfiguration\CreateHotelConfigu
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\UpdateHotelConfigurationUseCase;
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\DeleteHotelConfigurationUseCase;
 use App\Modules\Hotel\Application\UseCases\HotelConfiguration\ListAllHotelConfigurationsUseCase;
+use App\Modules\Hotel\Application\UseCases\HotelConfiguration\ShowHotelConfigurationUseCase;
 
 /**
  * @authenticated
@@ -29,7 +30,8 @@ class HotelConfigurationController extends Controller
         private readonly CreateHotelConfigurationUseCase $createHotelConfigurationUseCase,
         private readonly UpdateHotelConfigurationUseCase $updateHotelConfigurationUseCase,
         private readonly DeleteHotelConfigurationUseCase $deleteHotelConfigurationUseCase,
-        private readonly ListAllHotelConfigurationsUseCase $listAllHotelConfigurationsUseCase
+        private readonly ListAllHotelConfigurationsUseCase $listAllHotelConfigurationsUseCase,
+        private readonly ShowHotelConfigurationUseCase $showHotelConfigurationUseCase
     ) {}
 
 
@@ -64,6 +66,37 @@ class HotelConfigurationController extends Controller
     public function listAll(): JsonResponse
     {
         return response()->json($this->listAllHotelConfigurationsUseCase->execute());
+    }
+
+    /**
+     * Show hotel configurations
+     *
+     * Returns a single hotel with all its configurations.
+     *
+     * @urlParam id string required Hotel ID.
+     *
+     * @response 200 {
+     *   "id": "1",
+     *   "hotel_name": "Decameron Cartagena",
+     *   "max_rooms": 42,
+     *   "configurations": [
+     *     {
+     *       "room_type": "Standard",
+     *       "accommodation": "Doble",
+     *       "quantity": 10
+     *     }
+     *   ]
+     * }
+     *
+     * @response 404 {
+     *   "message": "Hotel not found"
+     * }
+     */
+    public function show(string $id): JsonResponse
+    {
+        return response()->json(
+            $this->showHotelConfigurationUseCase->execute($id)
+        );
     }
 
     /**

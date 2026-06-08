@@ -20,13 +20,29 @@ class HotelConfigurationRepository implements HotelConfigurationRepositoryInterf
         $eloquent->save();
     }
 
-    public function findById(string $id): ?DomainHotelConfiguration
+    public function findById(string $id): ?array
     {
-        $eloquent = EloquentHotelConfiguration::withTrashed()->find($id);
-        if (!$eloquent) {
+        $hotel = Hotel::with([
+            'configurations.roomType',
+            'configurations.accommodation'
+        ])->find($id);
+
+        if (!$hotel) {
             return null;
         }
-        return EloquentHotelConfigurationMapper::toDomain($eloquent);
+
+        return [
+            'id' => $hotel->id,
+            'hotel_name' => $hotel->name,
+            'max_rooms' => $hotel->max_rooms,
+            'configurations' => $hotel->configurations->map(function ($config) {
+                return [
+                    'room_type' => $config->roomType->name,
+                    'accommodation' => $config->accommodation->name,
+                    'quantity' => $config->quantity,
+                ];
+            })->toArray(),
+        ];
     }
 
     public function delete(DomainHotelConfiguration $configuration): void
