@@ -19,5 +19,11 @@ done
 
 echo "Running seeders..."
 php artisan db:seed --force
+echo "clearing cache..."
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear  
+echo "generating scribe documentation..."
+php artisan scribe:generate
 
 exec php artisan serve --host=0.0.0.0 --port="${PORT}"

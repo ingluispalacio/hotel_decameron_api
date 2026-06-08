@@ -10,7 +10,7 @@ interface HotelConfigurationRepositoryInterface
     public function save(HotelConfiguration $configuration): void;
 
     // Buscar por ID
-    public function findById(string $id): ?HotelConfiguration;
+    public function findById(string $id): ?array;
 
     // Eliminar una configuración (física o lógica, según decidas)
     public function delete(HotelConfiguration $configuration): void;

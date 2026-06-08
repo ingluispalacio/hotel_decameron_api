@@ -45,6 +45,7 @@ Route::prefix(config('api.prefix'))->group(function () {
             Route::get('hotels', [HotelController::class, 'index']);
             Route::get('hotels/{id}', [HotelController::class, 'show']);
             Route::get('hotel-configurations', [HotelConfigurationController::class, 'listAll']);
+            Route::get('hotel-configurations/{id}', [HotelConfigurationController::class, 'show']);
         });
 
         // Admin-only endpoints
