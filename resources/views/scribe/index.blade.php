@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "https://hoteldecameronapi-production.up.railway.app";
         var useCsrf = Boolean();
         var csrfUrl = "";
     </script>
@@ -233,7 +233,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 7, 2026</li>
+        <li>Last updated: June 8, 2026</li>
     </ul>
 </div>
 
@@ -242,7 +242,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>https://hoteldecameronapi-production.up.railway.app</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -272,7 +272,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/accommodations" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -280,7 +280,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/accommodations"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations"
 );
 
 const headers = {
@@ -418,7 +418,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/accommodations/c1b2d3e4-f5a6-7890-abcd-ef1234567890" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations/c1b2d3e4-f5a6-7890-abcd-ef1234567890" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -426,7 +426,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/accommodations/c1b2d3e4-f5a6-7890-abcd-ef1234567890"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations/c1b2d3e4-f5a6-7890-abcd-ef1234567890"
 );
 
 const headers = {
@@ -578,7 +578,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/accommodations/name/SINGLE" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations/name/SINGLE" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -586,7 +586,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/accommodations/name/SINGLE"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/accommodations/name/SINGLE"
 );
 
 const headers = {
@@ -741,7 +741,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth/login" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -753,7 +753,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/login"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/login"
 );
 
 const headers = {
@@ -924,7 +924,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth/register" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -941,7 +941,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/register"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/register"
 );
 
 const headers = {
@@ -1176,7 +1176,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth/logout" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/logout" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1184,7 +1184,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/logout"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/logout"
 );
 
 const headers = {
@@ -1311,7 +1311,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth/me" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/me" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1319,7 +1319,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/me"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/auth/me"
 );
 
 const headers = {
@@ -1465,7 +1465,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/cities" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/cities" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1477,7 +1477,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/cities"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/cities"
 );
 
 const headers = {
@@ -1638,7 +1638,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/cities" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/cities" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1646,7 +1646,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/cities"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/cities"
 );
 
 const headers = {
@@ -1788,7 +1788,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/hotel-configurations" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1796,7 +1796,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotel-configurations"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations"
 );
 
 const headers = {
@@ -1950,7 +1950,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/hotel-configurations" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1965,7 +1965,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotel-configurations"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations"
 );
 
 const headers = {
@@ -2170,7 +2170,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/hotel-configurations/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2185,7 +2185,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotel-configurations/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto"
 );
 
 const headers = {
@@ -2403,7 +2403,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/hotel-configurations/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2418,7 +2418,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotel-configurations/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto"
 );
 
 const headers = {
@@ -2636,7 +2636,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/hotel-configurations/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2644,7 +2644,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotel-configurations/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotel-configurations/architecto"
 );
 
 const headers = {
@@ -2794,7 +2794,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/hotels?search=Decameron&amp;per_page=10&amp;page=1" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels?search=Decameron&amp;per_page=10&amp;page=1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2802,7 +2802,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels"
 );
 
 const params = {
@@ -2986,7 +2986,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/hotels/architecto" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2994,7 +2994,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto"
 );
 
 const headers = {
@@ -3148,7 +3148,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/hotels" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3164,7 +3164,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels"
 );
 
 const headers = {
@@ -3374,7 +3374,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/hotels/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3390,7 +3390,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto"
 );
 
 const headers = {
@@ -3622,7 +3622,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/hotels/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3638,7 +3638,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto"
 );
 
 const headers = {
@@ -3870,7 +3870,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/hotels/architecto" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3878,7 +3878,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/hotels/architecto"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/hotels/architecto"
 );
 
 const headers = {
@@ -4028,7 +4028,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/roles" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/roles" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -4036,7 +4036,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles"
 );
 
 const headers = {
@@ -4169,7 +4169,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/roles" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4182,7 +4182,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles"
 );
 
 const headers = {
@@ -4348,7 +4348,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -4356,7 +4356,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -4509,7 +4509,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4522,7 +4522,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -4712,7 +4712,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4725,7 +4725,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -4915,7 +4915,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -4923,7 +4923,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/roles/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -5076,7 +5076,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/room-types" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/room-types" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5084,7 +5084,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/room-types"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/room-types"
 );
 
 const headers = {
@@ -5222,7 +5222,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/room-types/b1c2d3e4-f5a6-7890-abcd-ef1234567890" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/room-types/b1c2d3e4-f5a6-7890-abcd-ef1234567890" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5230,7 +5230,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/room-types/b1c2d3e4-f5a6-7890-abcd-ef1234567890"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/room-types/b1c2d3e4-f5a6-7890-abcd-ef1234567890"
 );
 
 const headers = {
@@ -5386,7 +5386,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/users" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/users" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5394,7 +5394,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users"
 );
 
 const headers = {
@@ -5531,7 +5531,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/users" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -5550,7 +5550,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users"
 );
 
 const headers = {
@@ -5800,7 +5800,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    --get "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5808,7 +5808,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -5965,7 +5965,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -5984,7 +5984,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -6256,7 +6256,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -6275,7 +6275,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
@@ -6547,7 +6547,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -6555,7 +6555,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+    "https://hoteldecameronapi-production.up.railway.app/api/v1/users/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
 );
 
 const headers = {
