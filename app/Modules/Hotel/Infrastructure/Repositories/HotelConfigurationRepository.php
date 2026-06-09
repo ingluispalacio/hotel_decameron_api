@@ -69,7 +69,7 @@ class HotelConfigurationRepository implements HotelConfigurationRepositoryInterf
         string $accommodationId,
         ?string $ignoreId = null
     ): bool {
-        $query = EloquentHotelConfiguration::withTrashed()
+        $query = EloquentHotelConfiguration::query()
             ->where('hotel_id', $hotelId)
             ->where('room_type_id', $roomTypeId)
             ->where('accommodation_id', $accommodationId);
